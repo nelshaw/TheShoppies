@@ -1,14 +1,32 @@
-<h1>{{title}}</h1>
-<h2>{{subtitle}}</h2>
+<body>
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
 
-<div class="search">
-    <p>Search for Movie:</p>
-    <input type="text" [(ngModel)]="word" class="search">
-    <input type="submit" (click)="getMovies()" value="Submit">
-</div>
+    <div class="main">
+        <div class="search">
+            <p>Movie Title</p>
+            <input type="text" [(ngModel)]="searchText">
+            <input type="submit" (click)="getMovies()" value="Submit">
+        </div>
 
-<ul class="movies">
-    <li *ngFor="let movie of moviesList">
-        {{ movie.Title }} ({{ movie.Year }})
-    </li>
-</ul>
+        <div class="results">
+            <p>Results for "{{ searchText }}"</p>
+            <ul class="movies">
+                <li *ngFor="let movie of moviesList">
+                    {{ movie.Title }} ({{ movie.Year }})
+                    <input type="submit" (click)="nominate(movie)" value="Nominate">
+                </li>
+            </ul>
+        </div>
+
+        <div class="nominations">
+            <p>Nominations</p>
+            <ul class="noms">
+                <li *ngFor="let nomination of nominationList">
+                    {{ nomination.Title }} ({{ nomination.Year }})
+                    <input type="submit" (click)="nominate(movie)" value="Remove">
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>

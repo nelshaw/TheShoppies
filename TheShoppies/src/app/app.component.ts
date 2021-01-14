@@ -12,7 +12,8 @@ export class AppComponent {
   title = 'The Shoppies';
   subtitle = 'Movie Awards for Entrepreneurs';
   moviesList : Movie[];
-  word: String;
+  searchText : String;
+  nominationList : Movie[] = [];
 
   constructor(private apiService: OmdbApiService) {
     
@@ -22,13 +23,18 @@ export class AppComponent {
   }
 
   getMovies(){
-    console.log(this.word);
-    this.apiService.getMovies(this.word).subscribe(
+    console.log(this.searchText);
+    this.apiService.getMovies(this.searchText).subscribe(
       data => {
         console.log(data);
         this.moviesList = data.Search;
       }
     );
+  }
+
+  nominate(movie){
+    console.log(movie.Title);
+    this.nominationList.push(movie);
   }
 
 }

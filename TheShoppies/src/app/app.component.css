@@ -1,0 +1,58 @@
+body{
+    background: linear-gradient(120deg, rgb(240, 240, 240), #ffffff);
+    width: 100%;
+    min-height:100vh;
+    background-size: cover;
+}
+
+h1, h2{
+    padding-left: 10px;
+}
+
+p{
+    font-weight: bold;
+}
+
+.main{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+}
+
+.main div {
+    padding: 10px;
+}
+
+.search{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: white;
+    border-radius: 5px;
+    width: 94vw;
+    box-shadow: 1px 1px 5px lightgray;
+    margin: 5px;
+}
+
+.results{
+    width: 45vw;
+    min-height: 30vh;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgray;
+    margin: 5px;
+}
+
+.nominations{
+    width: 45vw;
+    min-height: 30vh;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgray;
+    margin: 5px;
+}
+
+li{
+    padding: 2px;
+}
