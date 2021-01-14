@@ -14,6 +14,8 @@ export class AppComponent {
   moviesList : Movie[];
   searchText : String;
   nominationList : Movie[] = [];
+  public displayAlert = false;
+  public maxNom = false;
 
   constructor(private apiService: OmdbApiService) {
     
@@ -36,9 +38,23 @@ export class AppComponent {
   }
 
   nominate(movie){
+    console.log(this.nominationList.length);
 
-    console.log("Nominating movie:" + movie.Title);
-    this.nominationList.push(movie);
+    if(this.nominationList.length > 4) {
+      this.maxNom = true;
+      this.displayAlert = true;
+      
+      // timeout to remove alert after 3s
+      setTimeout(function() {
+        this.displayAlert = false;
+      }.bind(this), 3000);
+
+    }
+    else {
+      this.maxNom = false;
+      console.log("Nominating movie:" + movie.Title);
+      this.nominationList.push(movie);
+    }
 
   }
 

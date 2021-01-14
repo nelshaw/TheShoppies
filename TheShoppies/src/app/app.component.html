@@ -2,10 +2,15 @@
     <h1>{{ title }}</h1>
     <h2>{{ subtitle }}</h2>
 
+    <div *ngIf="displayAlert" class="alert alert-success" role="alert">
+        You've reached the maximum number of nominations!
+    </div>
+
     <div class="main">
         <div class="search">
             <p>Movie Title</p>
             <input type="text" [(ngModel)]="searchText" (keydown)="getMovies()">
+            <!-- todo : remove if dynamic is working -->
             <!-- <input type="submit" (click)="getMovies()" value="Submit"> -->
         </div>
 
