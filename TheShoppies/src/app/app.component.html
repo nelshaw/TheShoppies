@@ -5,8 +5,8 @@
     <div class="main">
         <div class="search">
             <p>Movie Title</p>
-            <input type="text" [(ngModel)]="searchText">
-            <input type="submit" (click)="getMovies()" value="Submit">
+            <input type="text" [(ngModel)]="searchText" (keydown)="getMovies()">
+            <!-- <input type="submit" (click)="getMovies()" value="Submit"> -->
         </div>
 
         <div class="results">
@@ -24,7 +24,7 @@
             <ul class="noms">
                 <li *ngFor="let nomination of nominationList">
                     {{ nomination.Title }} ({{ nomination.Year }})
-                    <input type="submit" (click)="nominate(movie)" value="Remove">
+                    <input type="submit" (click)="remove(nomination)" value="Remove">
                 </li>
             </ul>
         </div>
