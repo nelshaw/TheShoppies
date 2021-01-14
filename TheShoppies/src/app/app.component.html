@@ -8,27 +8,31 @@
 
     <div class="main">
         <div class="search">
-            <p>Movie Title</p>
+            <h3>Movie Title</h3>
             <input type="text" [(ngModel)]="searchText" (keydown)="getMovies()">
             <!-- todo : remove if dynamic is working -->
             <!-- <input type="submit" (click)="getMovies()" value="Submit"> -->
         </div>
 
         <div class="results">
-            <p>Results for "{{ searchText }}"</p>
+            <h3>Results for "{{ searchText }}"</h3>
             <ul class="movies">
                 <li *ngFor="let movie of moviesList">
-                    {{ movie.Title }} ({{ movie.Year }})
+                    <img class="poster" src="{{movie.Poster}}">
+                    <p class="title">{{ movie.Title }} | {{ movie.Year }}</p>
+                    
                     <input type="submit" (click)="nominate(movie)" value="Nominate">
                 </li>
             </ul>
         </div>
 
         <div class="nominations">
-            <p>Nominations</p>
+            <h3>Nominations</h3>
             <ul class="noms">
                 <li *ngFor="let nomination of nominationList">
-                    {{ nomination.Title }} ({{ nomination.Year }})
+                    <img class="poster" src="{{movie.Poster}}">
+                    <p class="title">{{ nomination.Title }} | {{ nomination.Year }}</p>
+
                     <input type="submit" (click)="remove(nomination)" value="Remove">
                 </li>
             </ul>

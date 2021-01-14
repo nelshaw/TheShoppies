@@ -1,58 +1,88 @@
 body{
-    background: linear-gradient(120deg, rgb(240, 240, 240), #ffffff);
+    background: linear-gradient(120deg, rgb(230, 230, 230), #ffffff);
     width: 100%;
     min-height:100vh;
     background-size: cover;
 }
 
 h1, h2{
-    padding-left: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-left: 1vw;
+    padding-top: 1vh;
 }
 
-p{
+p {
+    margin: 0;
+}
+
+.title{
     font-weight: bold;
+}
+
+.poster{
+    width: 8em;
 }
 
 .main{
     justify-content: center;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .main div {
-    padding: 10px;
+    padding: 2em;
+    margin: 1em;
+    background-color: white;
+    width: 95vw;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgray;
 }
 
 .search{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    background-color: white;
-    border-radius: 5px;
-    width: 94vw;
-    box-shadow: 1px 1px 5px lightgray;
-    margin: 5px;
+    width: 95vw;
 }
 
-.results{
-    width: 45vw;
+.results, .nominations{
     min-height: 30vh;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px lightgray;
-    margin: 5px;
 }
 
-.nominations{
-    width: 45vw;
-    min-height: 30vh;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px lightgray;
-    margin: 5px;
+ul{
+    display:flex;
+    flex-wrap: wrap;
 }
 
 li{
-    padding: 2px;
+    padding: 12px;
+    list-style: none;
+    /* float:left; */
+    /* display: inline-block; */
+    flex: 0 0 calc(30% - 5px);
+    vertical-align: top;
+}
+
+input[type="submit"]{
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+    transition: opacity 0.25s ease-in-out
+}
+
+input[type="submit"]:hover{
+    opacity: 1;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 2px solid lightgrey;
 }
