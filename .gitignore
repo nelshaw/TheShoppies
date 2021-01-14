@@ -351,60 +351,49 @@ MigrationBackup/
 
 
 # Angular specific files
-.DS_STORE
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-/dist/
-/bazel-out
-/integration/bazel/bazel-*
-*.log
-node_modules
+# compiled output
+TheShoppies/dist
+TheShoppies/tmp
+TheShoppies/out-tsc
+# Only exists if Bazel was run
+TheShoppies/bazel-out
 
-# Include when developing application packages.
-pubspec.lock
-.c9
-.idea/
-.devcontainer/*
-!.devcontainer/README.md
-!.devcontainer/recommended-devcontainer.json
-!.devcontainer/recommended-Dockerfile
-.settings/
-.vscode/launch.json
-.vscode/settings.json
-.vscode/tasks.json
-*.swo
-*.swp
-modules/.settings
-modules/.vscode
-.vimrc
-.nvimrc
+# dependencies
+TheShoppies/node_modules
 
-# Don't check in secret files
-*secret.js
+# profiling files
+TheShoppies/chrome-profiler-events*.json
+TheShoppies/speed-measure-plugin*.json
 
-# Ignore npm/yarn debug log
-npm-debug.log
-yarn-error.log
+# IDEs and editors
+TheShoppies/.idea
+TheShoppies/.project
+TheShoppies/.classpath
+TheShoppies/.c9/
+TheShoppies/*.launch
+TheShoppies/.settings/
+TheShoppies/*.sublime-workspace
 
-# build-analytics
-.build-analytics
+# IDE - VSCode
+TheShoppies/.vscode/*
+TheShoppies/!.vscode/settings.json
+TheShoppies/!.vscode/tasks.json
+TheShoppies/!.vscode/launch.json
+TheShoppies/!.vscode/extensions.json
+TheShoppies/.history/*
 
-# rollup-test output
-/modules/rollup-test/dist/
+# misc
+TheShoppies/.sass-cache
+TheShoppies/connect.lock
+TheShoppies/coverage
+TheShoppies/libpeerconnection.log
+TheShoppies/npm-debug.log
+TheShoppies/yarn-error.log
+TheShoppies/testem.log
+TheShoppies/typings
 
-# User specific bazel settings
-.bazelrc.user
-
-# User specific ng-dev settings
-.ng-dev.user*
-
-.notes.md
-baseline.json
-
-# Ignore .history for the xyz.local-history VSCode extension
-.history
-
-# CLDR data
-tools/gulp-tasks/cldr/cldr-data/
-
-# Husky
-.husky/_
+# System Files
+TheShoppies/.DS_Store
+TheShoppies/Thumbs.db
