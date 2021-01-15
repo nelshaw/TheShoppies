@@ -1,8 +1,7 @@
 body {
-    background: linear-gradient(120deg, #2B2D42, #3d3f57);
+    background: linear-gradient(120deg, #2B2D42, #505370);
     width: 100%;
     min-height:100vh;
-    background-size: cover;
 }
 
 h1, h2 {
@@ -12,10 +11,17 @@ h1, h2 {
     color: #EDF2F4;
 }
 
+.author{
+    color: #EDF2F4;
+    font-size: 70%;
+    margin-bottom: 7.5em;
+}
+
 h2 {
     color: #8D99AE;
-    margin-bottom: 1.5em;
+    /* margin-bottom: 1.5em; */
 }
+
 
 h3 {
     color: rgb(43, 42, 42);
@@ -169,4 +175,10 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     opacity: 1;
+}
+
+input:disabled, 
+input:disabled:hover{
+    background-color: #2B2D42;
+    opacity: 0.3;
 }

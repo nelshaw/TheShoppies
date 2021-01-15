@@ -2,23 +2,17 @@
     <div class="header">
         <h1>{{ title }}</h1>
         <h2>{{ subtitle }}</h2>
-
+        <h2 class="author">Created by Nadeen Elshawish</h2>
+        
         <a href="#search" class="search">Search Movies</a>
         <a href="#nominations" class="nominate">View Nominations</a>
     </div>
 
-    <div *ngIf="displayAlert" class="alert alert-success" role="alert">
-        You've reached the maximum number of nominations!
-    </div>
-
     <div class="main">
-        <div class="search inner-addon right-addon" id="search">
+        <div id="search">
             <h3><span>Movie Title</span></h3>
             <i class="material-icons">search</i>
             <input type="text" [(ngModel)]="searchText" (keydown)="getMovies()">
-            
-            <!-- todo : remove if dynamic is working -->
-            <!-- <input type="submit" (click)="getMovies()" value="Submit"> -->
         </div>
 
         <div class="results">
@@ -29,9 +23,13 @@
                     <p class="title">{{ movie.Title }}</p>
                     <p class="details">{{ movie.Year }}</p>
                     
-                    <input type="submit" (click)="nominate(movie)" value="Nominate">
+                    <input type="submit" (click)="nominate(movie)" value="Nominate" [disabled]="movie.isDisabled">
                 </li>
             </ul>
+        </div>
+        
+        <div *ngIf="displayAlert" class="alert alert-success" role="alert">
+            You've reached the maximum number of nominations!
         </div>
 
         <div class="nominations" id="nominations">

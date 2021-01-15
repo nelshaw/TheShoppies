@@ -11,11 +11,12 @@ export class AppComponent {
 
   title = 'The Shoppies';
   subtitle = 'Movie Awards for Entrepreneurs';
-  moviesList : Movie[];
+  moviesList : Movie[] = [];
   searchText : String;
   nominationList : Movie[] = [];
   public displayAlert = false;
   public maxNom = false;
+  public disabled = true;
 
   constructor(private apiService: OmdbApiService) {
     
@@ -25,13 +26,28 @@ export class AppComponent {
   }
 
   getMovies(){
+
+    this.moviesList = [];
     
     console.log("Searching for movie containing " + this.searchText);
     
     this.apiService.getMovies(this.searchText).subscribe(
       data => {
         console.log(data);
-        this.moviesList = data.Search;
+
+        data.Search.forEach(movie => {
+          let newMovie: Movie = {
+            Title: movie.Title,
+            Year: movie.Year,
+            Poster: movie.Poster,
+            isDisabled: false
+          };
+
+          this.moviesList.push(newMovie);
+          console.log("added new movie " + newMovie);
+
+        });
+
       }
     );
 
@@ -53,6 +69,7 @@ export class AppComponent {
     else {
       this.maxNom = false;
       console.log("Nominating movie:" + movie.Title);
+      movie.isDisabled = true;
       this.nominationList.push(movie);
     }
 
@@ -66,6 +83,7 @@ export class AppComponent {
 
       if(value == movie){
         this.nominationList.splice(index, 1); 
+        movie.isDisabled = false;
         console.log("Removed movie: " + movie.Title);
         console.log(this.nominationList);
       }
