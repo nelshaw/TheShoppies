@@ -13,7 +13,7 @@
 
     <div class="main">
         <div class="search inner-addon right-addon" id="search">
-            <h3>Movie Title</h3>
+            <h3><span>Movie Title</span></h3>
             <i class="material-icons">search</i>
             <input type="text" [(ngModel)]="searchText" (keydown)="getMovies()">
             
@@ -24,18 +24,13 @@
         <div class="results">
             <h3>Results for "{{ searchText }}"</h3>
             <ul class="movies">
-                <li>
-                    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg">
-                    <p class="title">Movie Title | 2018</p>
-                    
-                    <input type="submit" value="Nominate">
-                </li>
-                <!-- <li *ngFor="let movie of moviesList">
+                <li *ngFor="let movie of moviesList">
                     <img class="poster" src="{{movie.Poster}}">
-                    <p class="title">{{ movie.Title }} | {{ movie.Year }}</p>
+                    <p class="title">{{ movie.Title }}</p>
+                    <p class="details">{{ movie.Year }}</p>
                     
                     <input type="submit" (click)="nominate(movie)" value="Nominate">
-                </li> -->
+                </li>
             </ul>
         </div>
 
@@ -43,8 +38,9 @@
             <h3>Nominations</h3>
             <ul class="noms">
                 <li *ngFor="let nomination of nominationList">
-                    <img class="poster" src="{{movie.Poster}}">
-                    <p class="title">{{ nomination.Title }} | {{ nomination.Year }}</p>
+                    <img class="poster" src="{{nomination.Poster}}">
+                    <p class="title">{{ nomination.Title }}</p>
+                    <p class="details">{{ nomination.Year }}</p>
 
                     <input type="submit" (click)="remove(nomination)" value="Remove">
                 </li>

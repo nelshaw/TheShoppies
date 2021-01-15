@@ -12,15 +12,28 @@ h1, h2 {
     color: #EDF2F4;
 }
 
-h2{
+h2 {
     color: #8D99AE;
     margin-bottom: 1.5em;
 }
 
-h3{
+h3 {
     color: rgb(43, 42, 42);
     font-size: 170%;
     font-weight: 500;
+    overflow: hidden;
+}
+
+h3:after{
+    content:"";
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: bottom;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 10px;
+    border-top: 3px solid #8D99AE;
+    opacity: 0.15;
 }
 
 .header {
@@ -61,10 +74,12 @@ p {
 
 .title {
     font-weight: bold;
+    color: #3d3f57;
 }
 
-.poster {
-    width: 8em;
+.details{
+    color: #8D99AE;
+    font-size: 80%;
 }
 
 .main {
@@ -114,26 +129,36 @@ input[type="text"] {
 }
 
 ul {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
+    padding: 0;
 }
 
 li {
     padding: 12px;
     list-style: none;
-    /* float:left; */
-    /* display: inline-block; */
-    flex: 0 0 calc(30% - 5px);
+    /* width: 12em; */
+    max-width: 12em;
     vertical-align: top;
 }
 
+.poster {
+    width: 8em;
+    max-width: 10em;
+    transition: all 0.25s ease-in-out;
+    margin-bottom: 0.5em;
+}
+
+.poster:hover{
+    transform: scale(1.1);
+}
+
 input[type="submit"] {
-    /* background-color: #444;
-    color: white; */
-    background-color: white;
-    color: #444;
+    margin-top: 0.5em;
+    background-color: #2B2D42;
+    color: white;
     border-radius: 5px;
-    border: 1px solid #444;
+    border: 1px solid #2B2D42;
     padding-left: 1em;
     padding-right: 1em;
     text-transform: uppercase;
