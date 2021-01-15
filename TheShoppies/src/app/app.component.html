@@ -1,15 +1,22 @@
 <body>
-    <h1>{{ title }}</h1>
-    <h2>{{ subtitle }}</h2>
+    <div class="header">
+        <h1>{{ title }}</h1>
+        <h2>{{ subtitle }}</h2>
+
+        <a href="#search" class="search">Search Movies</a>
+        <a href="#nominations" class="nominate">View Nominations</a>
+    </div>
 
     <div *ngIf="displayAlert" class="alert alert-success" role="alert">
         You've reached the maximum number of nominations!
     </div>
 
     <div class="main">
-        <div class="search">
+        <div class="search inner-addon right-addon" id="search">
             <h3>Movie Title</h3>
+            <i class="material-icons">search</i>
             <input type="text" [(ngModel)]="searchText" (keydown)="getMovies()">
+            
             <!-- todo : remove if dynamic is working -->
             <!-- <input type="submit" (click)="getMovies()" value="Submit"> -->
         </div>
@@ -17,16 +24,22 @@
         <div class="results">
             <h3>Results for "{{ searchText }}"</h3>
             <ul class="movies">
-                <li *ngFor="let movie of moviesList">
+                <li>
+                    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg">
+                    <p class="title">Movie Title | 2018</p>
+                    
+                    <input type="submit" value="Nominate">
+                </li>
+                <!-- <li *ngFor="let movie of moviesList">
                     <img class="poster" src="{{movie.Poster}}">
                     <p class="title">{{ movie.Title }} | {{ movie.Year }}</p>
                     
                     <input type="submit" (click)="nominate(movie)" value="Nominate">
-                </li>
+                </li> -->
             </ul>
         </div>
 
-        <div class="nominations">
+        <div class="nominations" id="nominations">
             <h3>Nominations</h3>
             <ul class="noms">
                 <li *ngFor="let nomination of nominationList">
