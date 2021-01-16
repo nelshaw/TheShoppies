@@ -50,6 +50,11 @@ h3:after{
     padding: 5em;
 }
 
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 a {
     border-radius: 5px;
     border: 1px solid #444;
@@ -65,6 +70,13 @@ a {
     background-color: rgb(204, 10, 10);
     color: white;
     border-color: rgb(204, 10, 10);
+}
+
+/* realign buttons when screen gets smaller */
+@media screen and (max-width: 694px){
+    .search {
+        margin-left: 2em;
+    }
 }
 
 .nominate {
@@ -183,4 +195,22 @@ input:disabled,
 input:disabled:hover{
     background-color: #2B2D42;
     opacity: 0.3;
+}
+
+ol li{
+    max-width: 95%;
+    list-style: decimal;
+    padding: 1em;
+}
+
+ol li b, ol i {
+    color: #8D99AE;
+}
+
+.fab {
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    padding: 0;
+    margin: 0.5em;
 }

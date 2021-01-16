@@ -18,7 +18,8 @@ export class OmdbApiService {
         .set('type', 'movie')
         .set('s', title + '*');
 
-    return this.client.get('http://www.omdbapi.com/', {
+    console.log(environment.apiUrl);
+    return this.client.get(environment.apiUrl, {
       params: params
     });
   }

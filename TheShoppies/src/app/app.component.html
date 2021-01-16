@@ -1,11 +1,34 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">How to Nominate</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <ol>
+            <li>Search for the title of your favourite movie under <b>Movie Title</b></li>
+            <li>Under the <b>Results</b> section, click the <b>Nominate</b> button under the movie of your choice</li>
+            <li>
+                In the <b>Nominations</b> section, view or remove your nominations. You'll only be able to add <i>five</i> movies before you get a warning
+                
+            </li>
+            <br><i>Hint: Hover over the posters to see an enlarged version!</i>
+        </ol>
+    </div>
+</ng-template>
+
 <body>
     <div class="header">
         <h1>{{ title }}</h1>
         <h2>{{ subtitle }}</h2>
         
-        <!-- Buttons to direct to anchors in the page for easier use -->
-        <a href="#search" class="search">Search Movies</a>
-        <a href="#nominations" class="nominate">View Nominations</a>
+        <div class="buttons">
+            <!-- Buttons to direct to anchors in the page for easier use -->
+            <a href="#search" class="search">Search Movies</a>
+            <a href="#nominations" class="nominate">View Nominations</a>
+            <a href="#" class="nominate" (click)="open(content)">Get Help</a>
+        </div>
     </div>
 
     <div class="main">
@@ -51,6 +74,8 @@
     </div>
 
     <div class="footer">
-        Copyright © 2021 Nadeen Elshawish
+        Copyright © 2021 Nadeen Elshawish <br>
+        <a href="https://github.com/nelshaw" class="fab fa-github-square"></a>
+        <a href="https://www.linkedin.com/in/nadeenelshawish/" class="fab fa-linkedin"></a>
     </div>
 </body>
