@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'The Shoppies';
   subtitle = 'Movie Awards for Entrepreneurs';
   moviesList : Movie[] = [];
-  searchText : String;
+  searchText : String = '';
   nominationList : Movie[] = [];
   public displayAlert = false;
   public maxNom = false;

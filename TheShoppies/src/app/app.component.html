@@ -2,7 +2,6 @@
     <div class="header">
         <h1>{{ title }}</h1>
         <h2>{{ subtitle }}</h2>
-        <h2 class="author">Created by Nadeen Elshawish</h2>
         
         <!-- Buttons to direct to anchors in the page for easier use -->
         <a href="#search" class="search">Search Movies</a>
@@ -16,7 +15,7 @@
             <i class="material-icons">search</i>
             <input type="text" [(ngModel)]="searchText" (keydown)="getMovies()">
         </div>
-
+        
         <!-- Results from API GET request displaying title, year, and poster as well as nominate button -->
         <div class="results">
             <h3>Results for "{{ searchText }}"</h3>
@@ -49,5 +48,9 @@
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div class="footer">
+        Copyright © 2021 Nadeen Elshawish
     </div>
 </body>
