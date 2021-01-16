@@ -1,5 +1,5 @@
+// All necessary fields from get request
 export class Movie {
-    // all fields from get request
     Title: string;
     Year: string;
     Poster: string;

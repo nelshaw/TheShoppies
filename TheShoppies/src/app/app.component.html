@@ -4,17 +4,20 @@
         <h2>{{ subtitle }}</h2>
         <h2 class="author">Created by Nadeen Elshawish</h2>
         
+        <!-- Buttons to direct to anchors in the page for easier use -->
         <a href="#search" class="search">Search Movies</a>
         <a href="#nominations" class="nominate">View Nominations</a>
     </div>
 
     <div class="main">
+        <!-- Search box -->
         <div id="search">
             <h3><span>Movie Title</span></h3>
             <i class="material-icons">search</i>
             <input type="text" [(ngModel)]="searchText" (keydown)="getMovies()">
         </div>
 
+        <!-- Results from API GET request displaying title, year, and poster as well as nominate button -->
         <div class="results">
             <h3>Results for "{{ searchText }}"</h3>
             <ul class="movies">
@@ -28,10 +31,12 @@
             </ul>
         </div>
         
+        <!-- Alert that shows if max number of nominations is received -->
         <div *ngIf="displayAlert" class="alert alert-success" role="alert">
             You've reached the maximum number of nominations!
         </div>
 
+        <!-- List of nominations, similar layout to the results -->
         <div class="nominations" id="nominations">
             <h3>Nominations</h3>
             <ul class="noms">
